@@ -38,7 +38,7 @@ int main(int argc, char **argv)
     if (argc > 1)
         hostname = argv[1];
     else
-        hostname = "localhost";
+        hostname = "10.10.10.80";
 
     if (argc > 2)
         tcpPort = atoi(argv[2]);
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
         while (true)
         {
             // MmsValue *value = IedConnection_readObject(con, &error, "simpleIOGenericIO/GGIO1.AnIn1.mag.f", IEC61850_FC_MX);
-            MmsValue *value = IedConnection_readObject(con, &error, "simpleIOGenericIO/GGIO1.AnIn1.mag.f", IEC61850_FC_MX);
+            MmsValue *value = IedConnection_readObject(con, &error, "J115F67LD0/FMMXU1.Hz.instMag.f", IEC61850_FC_MX);
             if (value != NULL)
             {
                 float fval = MmsValue_toFloat(value);
